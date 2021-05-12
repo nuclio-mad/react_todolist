@@ -1,25 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
 
-function App() {
+import { Form } from './Form';
+import { ToDo } from './ToDo';
+
+const App = () => {
+
+  const [toDos, setToDos] = React.useState(['Llamar a Roberto']);
+
+  function addToDo (newToDo) {
+    const newListOfToDos = toDos.concat(newToDo);
+    setToDos(newListOfToDos);
+  }
+
+  const removeToDo = toDoName => {
+    const newListOfToDos = toDos.filter(currentToDo => currentToDo !== toDoName)
+    setToDos(newListOfToDos);
+  }
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      Current list:
+      <hr />
+      <ul>
+        {toDos.map(toDo => <ToDo content={toDo} removeItself={removeToDo} />)}
+      </ul>
+      <hr />
+      <button onClick={() => setToDos([])}>Click vacia la lista</button>
+      <hr />
+      <Form addToDo={addToDo}></Form>
     </div>
   );
+
 }
 
 export default App;
