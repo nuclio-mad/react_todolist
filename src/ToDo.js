@@ -1,5 +1,10 @@
 import React from 'react';
+import { ThemeContext } from './ThemeContext';
 
 export const ToDo = ({ content, removeItself }) => {
-  return <li className="card"><span>{content}</span><button className="button remove" onClick={() => removeItself(content)}>☓</button></li>
+  const {theme} = React.useContext(ThemeContext);
+  return <li className={`card card-${theme}`}>
+      <span>{content}</span>
+      <button className="button remove" onClick={() => removeItself(content)}>☓</button>
+    </li>
 }

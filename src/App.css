@@ -17,14 +17,20 @@
 }
 
 .card {
-  background: #EEEEEE;
-  border: 1px solid #9c9c9c;
   border-radius: 5px;
   padding: 5px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 10px;
+}
+.card-light {
+  background: #EEEEEE;
+  border: 1px solid #9c9c9c;
+}
+.card-dark {
+  background: #434343;
+  border: 1px solid #d8d8d8;
 }
 
 .card:hover {
