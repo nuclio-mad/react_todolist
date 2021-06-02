@@ -1,9 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap');
 
 .main-box{
-  margin: 300px auto;
-  width: 800px;
+  padding: 200px;
+  height: 100vh;
   font-family: 'Montserrat', sans-serif;
+}
+
+.main-box-light {
+  color: black;
+  background: white;
+}
+
+.main-box-dark {
+  color: rgb(255, 255, 255);
+  background: rgb(0, 0, 0);
 }
 
 .card {
