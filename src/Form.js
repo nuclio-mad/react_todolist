@@ -13,10 +13,14 @@ export const Form = props => {
   }
 
   return (
-    <>
-      <input value={text} onChange={handleInputValue}></input>
-      <button onClick={handleSubmit}>Add ToDo</button>
-    </>
+    <div className="form-container">
+      <h3>Add more toDos</h3>
+      <div className="form">
+        <br></br>
+        <input value={text} onChange={handleInputValue}></input>
+        <button style={{height: '30px'}} className="button add" onClick={handleSubmit}>Add ToDo</button>
+      </div>
+    </div>
   )
 
 }

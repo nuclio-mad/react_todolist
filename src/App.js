@@ -1,4 +1,5 @@
 import React from 'react';
+import './App.css';
 
 import { Form } from './Form';
 import { ToDo } from './ToDo';
@@ -19,14 +20,15 @@ const App = () => {
 
 
   return (
-    <div>
-      Current list:
+    <div className="main-box">
+      <b>Current list:</b>
       <hr />
       <ul>
         {toDos.map(toDo => <ToDo content={toDo} removeItself={removeToDo} />)}
       </ul>
       <hr />
-      <button onClick={() => setToDos([])}>Click vacia la lista</button>
+      <p className="aside">La longitud de la lista es {toDos.length}</p>
+      <p className="aside"><button className="button remove" onClick={() => setToDos([])}>Click vacia la lista</button></p>
       <hr />
       <Form addToDo={addToDo}></Form>
     </div>
